@@ -1,0 +1,484 @@
+.vending-machine-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  color: #ffffff;
+  background-color: #121212;
+}
+
+.vending-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #343a40;
+}
+
+.vending-header h1 {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.prescription-summary {
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border: 1px solid #343a40;
+  animation: slideUp 0.5s ease-out;
+  transition: all 0.3s ease;
+}
+
+.prescription-summary:hover {
+  border-color: #ffc107;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 193, 7, 0.3);
+}
+
+.prescription-summary h3 {
+  margin: 0 0 1.25rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.medicines-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.available-medicines,
+.unavailable-medicines {
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border: 1px solid #343a40;
+  animation: slideUp 0.6s ease-out;
+  transition: all 0.3s ease;
+  margin-bottom: 2.5rem;
+}
+
+.available-medicines:hover,
+.unavailable-medicines:hover {
+  border-color: #ffc107;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 193, 7, 0.3);
+}
+
+.available-medicines h3,
+.unavailable-medicines h3 {
+  margin-top: 0;
+  margin-bottom: 1.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.available-medicines h2,
+.unavailable-medicines h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.unavailable-medicines h2 {
+  color: #dc3545;
+}
+
+.unavailable-notice {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: #adb5bd;
+  background-color: rgba(220, 53, 69, 0.1);
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+.unavailable-notice p {
+  margin: 0;
+  color: #adb5bd;
+  font-size: 1.05rem;
+}
+
+.medicine-card {
+  background-color: #222;
+  border-radius: 1rem;
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  border: 1px solid #343a40;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.medicine-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+  border-color: #ffc107;
+}
+
+.medicine-card:last-child {
+  margin-bottom: 0;
+}
+
+.medicine-card.unavailable {
+  background-color: rgba(220, 53, 69, 0.05);
+  border: 1px dashed #dc3545;
+}
+
+.medicine-card h3 {
+  font-size: 1.5rem;
+  margin: 0 0 1.25rem 0;
+  color: #ffffff;
+}
+
+.unavailable-medicines .medicine-card h3 {
+  color: #dc3545;
+}
+
+.medicine-info {
+  flex: 1;
+  min-width: 250px;
+}
+
+.medicine-info h4 {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.medicine-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.medicine-details p {
+  margin: 0;
+  color: #adb5bd;
+  font-size: 1rem;
+}
+
+.medicine-details p strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.medicine-info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.machine-selection {
+  flex: 2;
+  min-width: 300px;
+}
+
+.machine-selection h5 {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.machine-selection h4 {
+  margin: 0 0 1.25rem 0;
+  font-size: 1.35rem;
+  color: #ffffff;
+}
+
+.machines-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.machine-option {
+  cursor: pointer;
+  border: 1px solid #343a40;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  background-color: #1a1a1a;
+  flex: 1 1 220px;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.machine-option:hover {
+  background-color: rgba(255, 193, 7, 0.05);
+  border-color: #ffc107;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.machine-option.selected {
+  border: 2px solid #ffc107;
+  background-color: rgba(255, 193, 7, 0.1);
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+}
+
+.machine-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.machine-name {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.machine-stock {
+  font-size: 0.95rem;
+  color: #adb5bd;
+}
+
+.machine-option .selected-indicator {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #ffc107;
+}
+
+.selected-indicator {
+  background-color: #ffc107;
+  color: #121212;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 8px rgba(255, 193, 7, 0.4);
+}
+
+.unavailable-message {
+  color: #dc3545;
+  margin-bottom: 1rem;
+  background-color: rgba(220, 53, 69, 0.1);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  text-align: center;
+  min-width: 250px;
+  border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+.unavailable-message p {
+  margin: 0 0 0.75rem 0;
+  color: #dc3545;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.pharmacy-suggestion {
+  font-style: italic;
+  color: #adb5bd;
+  font-size: 0.95rem;
+}
+
+.no-medicines {
+  text-align: center;
+  padding: 4rem;
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  color: #adb5bd;
+  border: 1px solid #343a40;
+  font-size: 1.15rem;
+}
+
+.proceed-btn {
+  background-color: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 1.25rem 2.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 2.5rem;
+  transition: all 0.3s;
+  align-self: center;
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+  width: 100%;
+}
+
+.proceed-btn:hover {
+  background-color: #16a34a;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.4);
+}
+
+.proceed-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+.proceed-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: #495057;
+  color: #adb5bd;
+  transform: none;
+  box-shadow: none;
+}
+
+.download-prescription-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  margin-top: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+
+.download-prescription-btn:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: #ffc107;
+  color: #121212;
+  box-shadow: 0 2px 4px rgba(255, 193, 7, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #d4a017;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.4);
+}
+
+.btn-secondary {
+  background-color: #343a40;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary:hover {
+  background-color: #495057;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.mt-4 {
+  margin-top: 2rem;
+}
+
+.loading,
+.error-message {
+  padding: 3rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+.loading {
+  background-color: #1a1a1a;
+  color: #adb5bd;
+  font-size: 1.15rem;
+}
+
+.error-message {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  margin-bottom: 2rem;
+  border: 1px solid rgba(220, 53, 69, 0.2);
+  font-size: 1.05rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .vending-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .medicine-details {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .medicine-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .machine-selection {
+    width: 100%;
+  }
+
+  .proceed-btn {
+    width: 100%;
+    padding: 1rem 1.5rem;
+  }
+
+  .vending-machine-container {
+    padding: 1.5rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

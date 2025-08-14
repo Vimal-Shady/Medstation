@@ -1,0 +1,471 @@
+.prescription-history-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  color: #ffffff;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.prescription-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #343a40;
+}
+
+.prescription-history-header h1 {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  position: relative;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #343a40;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+}
+
+.tabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+
+.tab {
+  padding: 1.25rem 1.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #adb5bd;
+  position: relative;
+  white-space: nowrap;
+  transition: color 0.3s;
+}
+
+.tab:hover {
+  color: #ffc107;
+  text-shadow: 0 0 5px rgba(255, 193, 7, 0.3);
+}
+
+.tab.active {
+  font-weight: 600;
+  color: #ffc107;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #ffc107;
+  border-radius: 2px 2px 0 0;
+  box-shadow: 0 0 8px #ffc107;
+}
+
+.prescriptions-list,
+.purchases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.prescription-card,
+.purchase-card {
+  background-color: #1a1a1a;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border: 1px solid #343a40;
+  transition: transform 0.3s, box-shadow 0.3s;
+  animation: slideUp 0.5s ease-out;
+}
+
+.prescription-card:hover,
+.purchase-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 193, 7, 0.3);
+  border-color: #ffc107;
+}
+
+.prescription-header,
+.purchase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #343a40;
+}
+
+.prescription-header h3,
+.purchase-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.prescription-date,
+.purchase-date {
+  color: #adb5bd;
+  font-size: 0.95rem;
+}
+
+.prescription-status,
+.purchase-status {
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prescription-status.pending,
+.purchase-status.pending {
+  background-color: rgba(255, 193, 7, 0.15);
+  color: #ffc107;
+}
+
+.prescription-status.purchased,
+.purchase-status.completed {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+
+.prescription-details,
+.purchase-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.prescription-details p {
+  margin: 0;
+  color: #adb5bd;
+  font-size: 0.95rem;
+}
+
+.prescription-medicines,
+.purchase-items {
+  margin-top: 1.5rem;
+}
+
+.prescription-medicines h4,
+.purchase-items h4 {
+  margin: 0 0 1.25rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.prescription-medicines ul,
+.purchase-items ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.medicine-item {
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background-color: #222;
+  margin-bottom: 1rem;
+  border: 1px solid #343a40;
+  transition: all 0.2s ease;
+}
+
+.medicine-item:hover {
+  border-color: #ffc107;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.medicine-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.medicine-name {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.medicine-price {
+  color: #adb5bd;
+  font-size: 0.95rem;
+}
+
+.medicine-quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.quantity-input-group {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1a1a;
+  border: 1px solid #343a40;
+  color: #ffffff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.quantity-btn:first-child {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.quantity-btn:last-child {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.quantity-btn:hover {
+  background-color: #ffc107;
+  color: #121212;
+  border-color: #ffc107;
+}
+
+.quantity-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #1a1a1a;
+  color: #adb5bd;
+  border-color: #343a40;
+}
+
+.quantity-input {
+  width: 3.5rem;
+  height: 2.25rem;
+  text-align: center;
+  border: 1px solid #343a40;
+  border-left: none;
+  border-right: none;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-size: 0.95rem;
+  -moz-appearance: textfield;
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.total-price {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.prescription-actions,
+.purchase-actions {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.25rem;
+}
+
+.no-prescriptions,
+.no-purchases {
+  text-align: center;
+  padding: 4rem;
+  background-color: #1a1a1a;
+  border-radius: 1.25rem;
+  color: #adb5bd;
+  border: 1px solid #343a40;
+}
+
+.loading,
+.error-message {
+  text-align: center;
+  padding: 3rem;
+}
+
+.error-message {
+  color: #dc3545;
+  background-color: rgba(220, 53, 69, 0.1);
+  border-radius: 1rem;
+}
+
+/* Purchase item styles */
+.purchase-item {
+  padding: 1.25rem;
+  border-radius: 1rem;
+  background-color: #222;
+  margin-bottom: 1rem;
+  border: 1px solid #343a40;
+  transition: all 0.2s ease;
+}
+
+.purchase-item:hover {
+  border-color: #ffc107;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.item-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-name {
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.item-quantity,
+.item-price {
+  color: #adb5bd;
+  font-size: 0.95rem;
+}
+
+.vending-machine {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #adb5bd;
+  font-style: italic;
+}
+
+/* Button styles */
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  font-size: 0.95rem;
+}
+
+.btn-primary {
+  background-color: #ffc107;
+  color: #121212;
+  box-shadow: 0 2px 4px rgba(255, 193, 7, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #d4a017;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.4);
+}
+
+.btn-secondary {
+  background-color: #343a40;
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.btn-secondary:hover {
+  background-color: #495057;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .prescription-history-container {
+    padding: 1.5rem;
+  }
+
+  .prescription-history-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+
+  .tab {
+    padding: 1rem 1.25rem;
+  }
+
+  .medicine-info,
+  .item-details {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .medicine-quantity-control {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .prescription-actions,
+  .purchase-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.prescription-card:nth-child(1),
+.purchase-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.prescription-card:nth-child(2),
+.purchase-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.prescription-card:nth-child(3),
+.purchase-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.purchase-info {
+  border: 1px solid #343a40;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  margin-bottom: 1.25rem;
+  background-color: #222;
+}

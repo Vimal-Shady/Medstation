@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+.nav-link {
+  position: relative;
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: gold;
+  text-shadow: 0 0 5px goldenrod, 0 0 10px gold, 0 0 15px gold;
+}
+
+@layer base {
+  :root {
+    --background: 248 38% 6%; /* #0b061f */
+    --foreground: 0 0% 100%;
+    --card: 248 38% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 248 38% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 271 84% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 85% 55%; /* #e3b313 */
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 45 100% 50%; /* #ffac09 */
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 45 100% 50%; /* glowing golden tone */
+    --input: 45 85% 55%;
+    --ring: 45 100% 50%;
+    --chart-1: 45 100% 60%;
+    --chart-2: 271 84% 58%;
+    --chart-3: 43 74% 66%;
+    --chart-4: 173 58% 39%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+
+    --sidebar-background: 248 38% 6%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 271 84% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 45 100% 50%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 45 100% 50%;
+    --sidebar-ring: 45 100% 50%;
+  }
+
+  .dark {
+    --background: 248 38% 6%;
+    --foreground: 0 0% 100%;
+    --card: 248 38% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 248 38% 8%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 271 84% 58%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 45 85% 55%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 45 100% 50%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 45 100% 50%;
+    --input: 45 85% 55%;
+    --ring: 45 100% 50%;
+
+    --chart-1: 45 100% 60%;
+    --chart-2: 271 84% 58%;
+    --chart-3: 43 74% 66%;
+    --chart-4: 173 58% 39%;
+    --chart-5: 27 87% 67%;
+
+    --sidebar-background: 248 38% 6%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 271 84% 58%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 45 100% 50%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 45 100% 50%;
+    --sidebar-ring: 45 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* 🌟 Header Glow Animation */
+.glow {
+  font-size: 48px;
+  background: linear-gradient(90deg, gold, goldenrod);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: glowing 1s infinite alternate;
+  text-shadow: 0 0 5px goldenrod, 0 0 10px gold, 0 0 15px gold;
+}
+
+@keyframes glowing {
+  0% {
+    text-shadow: 0 0 5px goldenrod, 0 0 10px gold, 0 0 15px gold;
+  }
+  100% {
+    text-shadow: 0 0 10px goldenrod, 0 0 20px gold, 0 0 30px gold;
+  }
+}

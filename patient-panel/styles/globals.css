@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", Arial, Helvetica, sans-serif;
+  background-color: #0a0a0a;
+  color: #f8f9fa;
+}
+
+/* ===== MEDICO HEADER STYLES (Scoped & Safe) ===== */
+
+.medstation-glow {
+  background: linear-gradient(90deg, #facc15, #fb923c, #facc15);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: medico-glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 8px #facc15, 0 0 12px #fde68a, 0 0 20px #fcd34d;
+}
+
+@keyframes medico-glow {
+  0% {
+    text-shadow: 0 0 5px #facc15, 0 0 10px #fcd34d, 0 0 15px #fde68a;
+  }
+  100% {
+    text-shadow: 0 0 10px #facc15, 0 0 20px #fb923c, 0 0 30px #facc15;
+  }
+}
+
+.nav-glow {
+  transition: all 0.3s ease;
+}
+
+.nav-glow:hover {
+  color: #facc15; /* yellow-400 */
+  text-shadow: 0 0 5px #facc15, 0 0 10px #fde68a, 0 0 15px #fcd34d;
+}
+
+/* Gold button styles */
+.gold-btn {
+  background: linear-gradient(45deg, #b78628, #fcc201, #b78628);
+  color: #000;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 0 10px rgba(252, 194, 1, 0.5);
+  transition: all 0.3s ease;
+}
+
+.gold-btn:hover {
+  box-shadow: 0 0 15px rgba(252, 194, 1, 0.8);
+  transform: translateY(-2px);
+}
+
+/* Card styles */
+.pharmacy-card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.pharmacy-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7), 0 0 10px rgba(250, 204, 21, 0.3);
+}
+
+/* Input field styles */
+.pharmacy-input {
+  background-color: #222;
+  border: 1px solid #444;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.pharmacy-input:focus {
+  border-color: #facc15;
+  box-shadow: 0 0 0 2px rgba(250, 204, 21, 0.25);
+}
+
+/* Section headers */
+.section-header {
+  position: relative;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.section-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #facc15, #fb923c);
+}
+
+/* Pulse animation for notifications */
+@keyframes pulse-gold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(250, 204, 21, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(250, 204, 21, 0);
+  }
+}
+
+.notification-badge {
+  animation: pulse-gold 2s infinite;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 47 95% 53%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 35 91% 52%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 47 95% 53%;
+    --chart-1: 47 95% 53%;
+    --chart-2: 35 91% 52%;
+    --chart-3: 25 95% 53%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 47 95% 53%;
+    --sidebar-primary-foreground: 0 0% 9%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 14.9%;
+    --sidebar-ring: 47 95% 53%;
+  }
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 47 95% 53%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 35 91% 52%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 47 95% 53%;
+    --chart-1: 47 95% 53%;
+    --chart-2: 35 91% 52%;
+    --chart-3: 25 95% 53%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 47 95% 53%;
+    --sidebar-primary-foreground: 0 0% 9%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 47 95% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

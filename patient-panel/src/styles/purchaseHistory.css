@@ -1,0 +1,540 @@
+.purchase-history-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #ffffff;
+  animation: fadeIn 0.5s ease-out;
+  background-color: #121212;
+}
+
+.purchase-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #333333;
+}
+
+.purchase-history-header h1 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  position: relative;
+}
+
+.header-actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.success-message {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #22c55e;
+}
+
+.error-message {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid #dc3545;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 1.125rem;
+  color: #aaaaaa;
+}
+
+.no-purchases {
+  background-color: #1a1a1a;
+  padding: 3rem;
+  text-align: center;
+  border-radius: 1rem;
+  margin-top: 1.5rem;
+  color: #aaaaaa;
+  border: 1px solid #333333;
+}
+
+.purchase-content {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.purchases-list {
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  height: fit-content;
+  border: 1px solid #333333;
+}
+
+.purchases-list h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.purchase-card {
+  background-color: #1e1e1e;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid #333333;
+}
+
+.purchase-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  border-color: rgba(255, 193, 7, 0.3);
+}
+
+.purchase-card.selected {
+  border-color: #ffc107;
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.2);
+}
+
+.purchase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.purchase-id {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.purchase-date {
+  color: #aaaaaa;
+  font-size: 0.875rem;
+}
+
+.purchase-info h4 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.purchase-info p {
+  margin: 0.25rem 0;
+  font-size: 0.875rem;
+  color: #aaaaaa;
+}
+
+.purchase-status {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.75rem;
+}
+
+.purchase-details {
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  padding: 1.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #333333;
+}
+
+.purchase-details h3 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.no-selection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  color: #aaaaaa;
+  font-size: 1rem;
+  background-color: #1e1e1e;
+  border-radius: 1rem;
+  border: 1px dashed #333333;
+}
+
+.details-card {
+  background-color: #1e1e1e;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid #333333;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #333333;
+}
+
+.detail-row:last-of-type {
+  border-bottom: none;
+  margin-bottom: 1.25rem;
+}
+
+.detail-row span:first-child {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.status-completed,
+.status-COMPLETED {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.status-pending,
+.status-PENDING {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.medicines-list {
+  margin-top: 1.75rem;
+}
+
+.medicines-list h4 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 0.75rem;
+}
+
+.medicine-item {
+  background-color: #1e1e1e;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  border: 1px solid #333333;
+  transition: all 0.2s ease;
+}
+
+.medicine-item:hover {
+  border-color: rgba(255, 193, 7, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.medicine-name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.medicine-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.875rem;
+  color: #aaaaaa;
+}
+
+.purchase-note {
+  margin-top: 1.75rem;
+  padding: 1.25rem;
+  background-color: rgba(255, 193, 7, 0.1);
+  border-radius: 0.75rem;
+  border-left: 4px solid #ffc107;
+}
+
+.purchase-note p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #ffffff;
+}
+
+.btn {
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #ffc107;
+  color: #121212;
+  box-shadow: 0 2px 4px rgba(255, 193, 7, 0.3);
+}
+
+.btn-primary:hover {
+  background-color: #ffca28;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.4);
+}
+
+.btn-secondary {
+  background-color: #333333;
+  color: #ffffff;
+  border: 1px solid #444444;
+}
+
+.btn-secondary:hover {
+  background-color: #444444;
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.back-button {
+  display: inline-block;
+  background-color: #333333;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 2rem;
+  transition: all 0.3s;
+}
+
+.back-button:hover {
+  background-color: #444444;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.view-details-button,
+.view-qr-button {
+  background-color: #ffc107;
+  color: #121212;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.view-details-button:hover,
+.view-qr-button:hover {
+  background-color: #ffca28;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
+}
+
+.purchase-details-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  border-radius: 1rem;
+  width: 90%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #333333;
+}
+
+.modal-header h2 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-button:hover {
+  color: #ffc107;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}
+
+.purchase-summary {
+  background-color: #1e1e1e;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #333333;
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-row .label {
+  font-weight: 600;
+  color: #aaaaaa;
+}
+
+.summary-row .value {
+  color: #ffffff;
+}
+
+.items-list {
+  background-color: #1e1e1e;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  margin-top: 1rem;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #333333;
+}
+
+.item-row:last-child {
+  border-bottom: none;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-name {
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.item-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  color: #aaaaaa;
+}
+
+.item-price {
+  font-weight: 600;
+  color: #ffc107;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #1e1e1e;
+  border-radius: 0.5rem;
+}
+
+.total-row .label {
+  color: #ffffff;
+}
+
+.total-row .value {
+  color: #ffc107;
+  font-size: 1.125rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 1px solid #333333;
+}
+
+@media (max-width: 768px) {
+  .purchase-content {
+    grid-template-columns: 1fr;
+  }
+
+  .purchase-history-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .medicine-details {
+    flex-direction: column;
+    gap: 0.375rem;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
